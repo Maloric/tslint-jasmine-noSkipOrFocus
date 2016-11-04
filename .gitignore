@@ -1,5 +1,6 @@
 node_modules
 typings
 dist
+tmp
 npm-debug.log
 

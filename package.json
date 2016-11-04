@@ -1,15 +1,23 @@
 {
   "name": "tslint-jasmine-noSkipOrFocus",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Linting rules to disallow focused or skipped tests.",
   "scripts": {
     "lint": "tslint -c tslint.json src/**/*.ts test/**/*.ts",
-    "release": "npm run build && rm -rf ./dist && tsc -p tsconfig.json && npm run copy:common && npm run prepare:package",
-    "build": "rm -rf ./dist && tsc && npm run lint && npm t",
-    "copy:common": "cp README.md dist",
-    "prepare:package": "cat package.json | ts-node build/package.ts > dist/package.json",
-    "test": "rm -rf ./dist && tsc && mocha dist/test/*.js dist/test/**/*.js",
-    "test:watch": "rm -rf ./dist && tsc && mocha dist/test/*.js dist/test/**/*.js --watch"
+
+    "prerelease": "npm run build && npm run lint && npm run test",
+    "release": "npm publish ./dist",
+
+    "prebuild": "npm run compile",
+    "build": "rimraf ./dist && cp -r ./tmp/src ./dist",
+    "postbuild": "cp README.md dist && cp LICENSE ./dist && cp package.json ./dist",
+
+    "precompile": "rimraf ./tmp",
+    "compile": "tsc",
+
+    "pretest": "npm run compile",
+    "test": "mocha tmp/test/*.js tmp/test/**/*.js",
+    "test:watch": "mocha tmp/test/*.js tmp/test/**/*.js --watch"
   },
   "contributors": [
     "Jamie Morris <jamie@maloric.com>"
@@ -43,5 +51,8 @@
   },
   "peerDependencies": {
     "tslint": "^3.9.0"
+  },
+  "dependencies": {
+    "rimraf": "^2.5.4"
   }
 }
