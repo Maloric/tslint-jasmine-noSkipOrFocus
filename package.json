@@ -1,6 +1,6 @@
 {
   "name": "tslint-jasmine-noSkipOrFocus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Linting rules to disallow focused or skipped tests.",
   "scripts": {
     "lint": "tslint -c tslint.json src/**/*.ts test/**/*.ts",
@@ -41,18 +41,18 @@
   },
   "homepage": "https://github.com/maloric/tslint-jasmine-noSkipOrFocus#readme",
   "devDependencies": {
-    "@types/chai": "^3.4.33",
-    "@types/mocha": "^2.2.32",
-    "@types/node": "^6.0.41",
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.39",
+    "@types/node": "^7.0.5",
     "chai": "^3.5.0",
-    "mocha": "3.0.2",
-    "tslint": "3.14.0",
-    "typescript": "^2.0.3"
+    "mocha": "3.2.0",
+    "tslint": "4.5.1",
+    "typescript": "^2.2.1"
   },
   "peerDependencies": {
-    "tslint": "^3.9.0"
+    "tslint": "^4.5.1"
   },
   "dependencies": {
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.6.1"
   }
 }

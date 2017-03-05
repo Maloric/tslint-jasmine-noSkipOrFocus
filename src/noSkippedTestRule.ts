@@ -1,5 +1,5 @@
 import * as ts from 'typescript';
-import * as Lint from 'tslint/lib/lint';
+import * as Lint from 'tslint';
 
 export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
@@ -14,6 +14,7 @@ export class Rule extends Lint.Rules.AbstractRule {
         options: null,
         optionExamples: ['true'],
         type: 'functionality',
+        typescriptOnly: false
     };
 
     public static FAILURE_STRING = 'Skipped tests are not allowed';
