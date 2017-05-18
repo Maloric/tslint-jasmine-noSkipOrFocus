@@ -4,4 +4,4 @@ dist
 tmp
 npm-debug.log
 .idea
-
+.vscode
