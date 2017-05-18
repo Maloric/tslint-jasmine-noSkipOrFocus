@@ -1,20 +1,16 @@
 {
   "name": "tslint-jasmine-noSkipOrFocus",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Linting rules to disallow focused or skipped tests.",
   "scripts": {
     "lint": "tslint -c tslint.json src/**/*.ts test/**/*.ts",
-
     "prerelease": "npm run build && npm run lint && npm run test",
     "release": "npm publish ./dist",
-
     "prebuild": "npm run compile",
     "build": "rimraf ./dist && cp -r ./tmp/src ./dist",
     "postbuild": "cp README.md dist && cp LICENSE ./dist && cp package.json ./dist",
-
     "precompile": "rimraf ./tmp",
     "compile": "tsc",
-
     "pretest": "npm run compile",
     "test": "mocha tmp/test/*.js tmp/test/**/*.js",
     "test:watch": "mocha tmp/test/*.js tmp/test/**/*.js --watch"
