@@ -1,6 +1,6 @@
 {
   "name": "tslint-jasmine-noSkipOrFocus",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Linting rules to disallow focused or skipped tests.",
   "scripts": {
     "lint": "tslint -c tslint.json src/**/*.ts test/**/*.ts",
