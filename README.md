@@ -12,7 +12,7 @@ or add
 ```
 to the devDependencies in your package.json.
 
-Add the following to the tsling.config.json:
+Add the following to the tslint.config.json:
 ```
 "rulesDirectory": [
     "node_modules/tslint-jasmine-noSkipOrFocus"
